@@ -1,0 +1,11 @@
+body, html {
+    height: 100%
+}
+
+.sign-up-page {
+    display: flex;
+}
+
+#bgimg {
+    height: 100vh;
+}
