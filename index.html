@@ -5,14 +5,34 @@
     <meta charset="UTF-8">
     <title>Sign-Up Form</title>
     <link rel="stylesheet" href="style.css">
+
+    <script>
+        var check = function() {
+            if(document.getElementById('pwInput').value===
+            document.getElementById('pwConfirm').value) {
+               document.getElementById('message').style.color = 'green';
+               document.getElementById('message').innerHTML = 'matching';
+            } else {
+                document.getElementById('pwConfirm').style.color = 'red';
+                document.getElementById('message').style.color = 'red';
+                document.getElementById('message').innerHTML = 'not matching';
+            }
+            
+        }
+    </script>
 </head>
 
 <body>
     <div class="sign-up-page">
         <div class="side-banner">
-            <div id="logo-bar"></div>
-            <div id="logo"></div>
-            <div id="logo-text"></div>
+            <div id="logo-bar">
+                <div id="logo"></div>
+                <div id="logo-text">
+                    <h1>
+                        Starweilder
+                    </h1>
+                </div>
+            </div>
         </div>
 
         <div class="content">
@@ -46,7 +66,7 @@
                                 </label>
 
                                 <label for="pwInput">PASSWORD
-                                    <input type="text" id="pwInput" name="password">
+                                    <input type="text" id="pwInput" name="password" onkeyup="check();">
                                 </label>
                             </div>
 
@@ -60,7 +80,8 @@
                                 </label>
 
                                 <label for="pwConfirm">CONFIRM PASSWORD
-                                    <input type="text id=pwConfirm" name="password">
+                                    <span id="message"></span>
+                                    <input type="text" id="pwConfirm" name="password" onkeyup="check();" >
                                 </label>
                             </div>
 
